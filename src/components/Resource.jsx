@@ -5,6 +5,7 @@ function Resource({ selectedType }) {
   const [resources, setResources] = useState([]);
   const [title, setTitle] = useState("");
   const [link, setLink] = useState("");
+  const [isFormVisible, setIsFormVisible] = useState(false);
 
   useEffect(() => {
     if (selectedType) {
@@ -31,6 +32,7 @@ function Resource({ selectedType }) {
       });
       setTitle("");
       setLink("");
+      setIsFormVisible(false); // Hide the form after submission
       fetchResources(selectedType);
     } catch (error) {
       console.error("Error adding resource:", error);
@@ -39,25 +41,37 @@ function Resource({ selectedType }) {
 
   return (
     <div>
-      <h2>Resources for: {selectedType || "No Type Selected"}</h2>
+      <h2>{!selectedType ? "Sources for..." : `${selectedType}`}</h2>
       {selectedType && (
         <>
-          <div>
-            <input
-              type="text"
-              placeholder="Resource Title"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Resource Link"
-              value={link}
-              onChange={(e) => setLink(e.target.value)}
-            />
-            <button onClick={addResource}>Add Resource</button>
-          </div>
-          <ul>
+          <button
+            onClick={() => setIsFormVisible(!isFormVisible)}
+            className="toggle-form-btn"
+          >
+            {isFormVisible ? "Close" : "Add Source"}
+          </button>
+
+          {isFormVisible && (
+            <div className="resource-form">
+              <input
+                type="text"
+                placeholder="Resource Title"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+              <input
+                type="text"
+                placeholder="Resource Link"
+                value={link}
+                onChange={(e) => setLink(e.target.value)}
+              />
+              <div className="container-btn">
+              <button onClick={addResource}>Add Resource</button>
+              </div>
+            </div>
+          )}
+
+          <ul className="resource-list">
             {resources.map((resource) => (
               <li key={resource.id}>
                 <h4>{resource.title}</h4>

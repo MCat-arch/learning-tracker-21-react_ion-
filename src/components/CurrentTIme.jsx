@@ -1,5 +1,6 @@
 "use client";
-import React from 'react'
+import "./style/time.css";
+import React from 'react';
 import { useEffect, useState } from 'react';
 
 function CurrentTIme() {
@@ -30,10 +31,10 @@ function CurrentTIme() {
   const formattedDate = dateFormatter.format(time);
     return(
 
-        <div className="container mt-4">
+        <div className="progress-card">
             <div className="text-center">
-            <h2 style={{ fontSize: '2em', fontWeight: 'bold' }}>{formattedTime}</h2>
-            <p style={{ fontSize: '1.5em' }}>{formattedDate}</p>
+            <h2 className="progress-time">{formattedTime}</h2>
+            <p className="progress-date">{formattedDate}</p>
             </div>
 
         </div>

@@ -1,9 +1,21 @@
 .navbar-brand{
-    color: rgb(200, 219, 255);
-    margin-left: auto;
+    color: rgb(151, 228, 244);
+    margin-left: 10%;
+    font-weight: 600;
+    word-spacing: 10px;
 
 }
 
 .navbar-nav{
-    margin-right: auto;
+    margin-right: 10%;
+    padding-bottom: 13px;
+}
+.nav-item{
+    padding-inline: 1.5em;
+    
+}
+.nav-link{
+    color: whitesmoke;
+    padding-bottom: 0;
+    border-bottom: solid 1px rgb(117, 117, 117);
 }

@@ -13,7 +13,7 @@ const DashboardMain = () =>{
     return(
 
         <div className="container mt-4">
-            <h1>Lets GO buddy!</h1>
+           <h4 style={{color: "grey", fontSize:"16px", marginLeft:"20px"}}>I LOVE REACT</h4>
             <div className="dashboard-content">
             <CurrentTIme />
             <ProgressBar />
