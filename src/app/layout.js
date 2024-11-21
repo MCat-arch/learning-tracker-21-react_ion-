@@ -1,6 +1,13 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+DgI1UJ+kl9z4f+CXOF68NHPCJPrwqv3VQmtW/5"
+  crossorigin="anonymous"
+/>
+
 
 
 const geistSans = localFont({

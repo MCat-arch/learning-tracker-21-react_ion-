@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server';
 import {date, z} from 'zod';
 
 const noteSchema = z.object({
+  id: z.number().nonnegative("ID must be a non-negative number."),
   title: z.string().nonempty("Title requaired!"),
   content: z.string().nonempty("Content requaired!"),
   category: z.enum(["material", 'random']),
