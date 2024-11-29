@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Navbar from '@/app/navbar';
+import Dashboard from './dashboard/page';
 
 export default function Home() {
 
@@ -9,6 +10,7 @@ export default function Home() {
     <>
     <div>
       <Navbar />
+      <Dashboard />
     </div>
     </>
   );
